@@ -1,5 +1,5 @@
-from urllib import urlopen as uReq
-from bs4 import BeautifulSoup as soup
+from urllib import urlopen as uReq 
+from bs4 import BeautifulSoup as soup 
 import datetime, requests
 
 url = "https://tianchi.aliyun.com/competition/information.htm?raceId=231692"
@@ -19,11 +19,8 @@ def submissionCount():
 
 
 def date():
-    d = datetime.date.today()
-    month = str('%02d' % d.month)
-    day = str('%02d' % d.day)
-    year = str('%02d' % d.year)
-    return month + "/" + day + "/" + year
+    stamp = datetime.datetime.now().strftime("%m/%d/%y %H:%M")
+    return stamp
 
 def submitForm():
     formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf34oKQNeWO2XwFLgheqAI6y1YPW7i2VxRx8t8AK9YCvka3LQ/formResponse"
